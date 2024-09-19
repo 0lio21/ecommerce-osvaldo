@@ -1,0 +1,244 @@
+[
+    {
+        "id": 1,
+        "nombre": "Zapatillas Deportivas",
+        "precio": 100,
+        "imagen": "img/medias/hero.jpg",
+        "descripcion": "Zapatillas deportivas cómodas para correr.",
+        "categoria": "Calzado"
+    },
+    {
+        "id": 2,
+        "nombre": "Medias Largas",
+        "precio": 150,
+        "imagen": "https://media2.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/m/e/medias-adidas-pack-x3-performance-cushioned-negra-100040ic9521001-1.jpg",
+        "descripcion": "Medias largas y suaves, perfectas para el invierno.",
+        "categoria": "Accesorios"
+    },
+    {
+        "id": 3,
+        "nombre": "Remera de Algodón",
+        "precio": 8000,
+        "imagen": "img/remera1.jpg",
+        "descripcion": "Remera de algodón 100% cómoda para uso diario.",
+        "categoria": "Ropa casual"
+    },
+    {
+        "id": 4,
+        "nombre": "Pantalones Cargo",
+        "precio": 500,
+        "imagen": "img/pantalones1.jpg",
+        "descripcion": "Pantalones cargo con múltiples bolsillos, ideales para aventuras al aire libre.",
+        "categoria": "Ropa casual"
+    },
+    {
+        "id": 5,
+        "nombre": "Shorts de Playa",
+        "precio": 1200,
+        "imagen": "img/shorts1.jpg",
+        "descripcion": "Shorts livianos para disfrutar de un día en la playa.",
+        "categoria": "Ropa casual"
+    },
+    {
+        "id": 6,
+        "nombre": "Camiseta de Entrenamiento",
+        "precio": 250,
+        "imagen": "img/camiseta1.jpg",
+        "descripcion": "Camiseta de entrenamiento transpirable para deportes.",
+        "categoria": "Ropa casual"
+    },
+    {
+        "id": 7,
+        "nombre": "Chaleco de Invierno",
+        "precio": 3000,
+        "imagen": "img/chaleco1.jpg",
+        "descripcion": "Chaleco acolchado para mantener el calor en días fríos.",
+        "categoria": "Ropa de invierno"
+    },
+    {
+        "id": 8,
+        "nombre": "Gorra Casual",
+        "precio": 600,
+        "imagen": "img/gorra1.jpg",
+        "descripcion": "Gorra casual para complementar tu estilo diario.",
+        "categoria": "Accesorios"
+    },
+    {
+        "id": 9,
+        "nombre": "Campera Impermeable",
+        "precio": 4500,
+        "imagen": "img/campera1.jpg",
+        "descripcion": "Campera impermeable para mantenerte seco bajo la lluvia.",
+        "categoria": "Ropa de invierno"
+    },
+    {
+        "id": 10,
+        "nombre": "Bufanda de Lana",
+        "precio": 950,
+        "imagen": "img/bufanda1.jpg",
+        "descripcion": "Bufanda de lana suave para protegerte del frío.",
+        "categoria": "Ropa de invierno"
+    },
+    {
+        "id": 11,
+        "nombre": "Cinturón de Cuero",
+        "precio": 850,
+        "imagen": "img/cinturon1.jpg",
+        "descripcion": "Cinturón de cuero genuino, ideal para complementar cualquier atuendo.",
+        "categoria": "Accesorios"
+    },
+    {
+        "id": 12,
+        "nombre": "Botas de Montaña",
+        "precio": 3200,
+        "imagen": "img/botas1.jpg",
+        "descripcion": "Botas resistentes, perfectas para largas caminatas en terrenos difíciles.",
+        "categoria": "Calzado"
+    },
+    {
+        "id": 13,
+        "nombre": "Guantes de Invierno",
+        "precio": 600,
+        "imagen": "img/guantes1.jpg",
+        "descripcion": "Guantes de lana con interior térmico para mantener tus manos calientes.",
+        "categoria": "Ropa de invierno"
+    },
+    {
+        "id": 14,
+        "nombre": "Camisa de Lino",
+        "precio": 1800,
+        "imagen": "img/camisa1.jpg",
+        "descripcion": "Camisa ligera de lino para un estilo casual y fresco.",
+        "categoria": "Ropa casual"
+    },
+    {
+        "id": 15,
+        "nombre": "Jeans Clásicos",
+        "precio": 2100,
+        "imagen": "img/jeans1.jpg",
+        "descripcion": "Jeans clásicos, ajustados y duraderos, adecuados para cualquier ocasión.",
+        "categoria": "Ropa casual"
+    },
+    {
+        "id": 16,
+        "nombre": "Mochila de Viaje",
+        "precio": 2800,
+        "imagen": "img/mochila1.jpg",
+        "descripcion": "Mochila amplia con múltiples compartimientos, ideal para viajes.",
+        "categoria": "Mochilas"
+    },
+    {
+        "id": 17,
+        "nombre": "Sandalias de Playa",
+        "precio": 500,
+        "imagen": "img/sandalias1.jpg",
+        "descripcion": "Sandalias ligeras y cómodas, perfectas para un día en la playa.",
+        "categoria": "Calzado"
+    },
+    {
+        "id": 18,
+        "nombre": "Sombrero de Paja",
+        "precio": 750,
+        "imagen": "img/sombrero1.jpg",
+        "descripcion": "Sombrero de paja ideal para protegerte del sol en días calurosos.",
+        "categoria": "Accesorios"
+    },
+    {
+        "id": 19,
+        "nombre": "Lentes de Sol",
+        "precio": 1200,
+        "imagen": "img/lentes1.jpg",
+        "descripcion": "Lentes de sol con protección UV, estilo moderno.",
+        "categoria": "Accesorios"
+    },
+    {
+        "id": 20,
+        "nombre": "Bolso de Mano",
+        "precio": 2500,
+        "imagen": "img/bolso1.jpg",
+        "descripcion": "Bolso de mano elegante, ideal para el día a día o salidas nocturnas.",
+        "categoria": "Accesorios"
+    },
+    {
+        "id": 21,
+        "nombre": "Chaleco Reflectante",
+        "precio": 650,
+        "imagen": "img/chaleco2.jpg",
+        "descripcion": "Chaleco reflectante para uso en exteriores, ideal para actividades nocturnas.",
+        "categoria": "Ropa de invierno"
+    },
+    {
+        "id": 22,
+        "nombre": "Pañuelo Estampado",
+        "precio": 300,
+        "imagen": "img/panuelo1.jpg",
+        "descripcion": "Pañuelo de algodón estampado, ideal para dar un toque único a tu estilo.",
+        "categoria": "Accesorios"
+    },
+    {
+        "id": 23,
+        "nombre": "Zapatos de Vestir",
+        "precio": 4000,
+        "imagen": "img/zapatos1.jpg",
+        "descripcion": "Zapatos de vestir elegantes, perfectos para eventos formales.",
+        "categoria": "Calzado"
+    },
+    {
+        "id": 24,
+        "nombre": "Reloj de Pulsera",
+        "precio": 3500,
+        "imagen": "img/reloj1.jpg",
+        "descripcion": "Reloj de pulsera con correa de cuero y diseño clásico.",
+        "categoria": "Accesorios"
+    },
+    {
+        "id": 25,
+        "nombre": "Chamarra de Cuero",
+        "precio": 5200,
+        "imagen": "img/chamarra1.jpg",
+        "descripcion": "Chamarra de cuero genuino, con un estilo rockero.",
+        "categoria": "Ropa de invierno"
+    },
+    {
+        "id": 26,
+        "nombre": "Bufanda de Seda",
+        "precio": 1800,
+        "imagen": "img/bufanda2.jpg",
+        "descripcion": "Bufanda de seda suave y ligera, con un toque de elegancia.",
+        "categoria": "Ropa de invierno"
+    },
+    {
+        "id": 27,
+        "nombre": "Calcetines de Algodón",
+        "precio": 350,
+        "imagen": "img/calcetines1.jpg",
+        "descripcion": "Calcetines de algodón transpirables, ideales para uso diario.",
+        "categoria": "Accesorios"
+    },
+    {
+        "id": 28,
+        "nombre": "Mochila Escolar",
+        "precio": 1500,
+        "imagen": "img/mochila2.jpg",
+        "descripcion": "Mochila resistente para estudiantes, con múltiples compartimentos.",
+        "categoria": "Mochilas"
+    },
+    {
+        "id": 29,
+        "nombre": "Chaleco de Plumas",
+        "precio": 4200,
+        "imagen": "img/chaleco3.jpg",
+        "descripcion": "Chaleco de plumas ligero y cálido, ideal para climas fríos.",
+        "categoria": "Ropa de invierno"
+    },
+    {
+        "id": 30,
+        "nombre": "Sudadera Deportiva",
+        "precio": 2100,
+        "imagen": "img/sudadera1.jpg",
+        "descripcion": "Sudadera deportiva cómoda y ligera, perfecta para hacer ejercicio.",
+        "categoria": "Ropa de invierno"
+    }
+]
+
+

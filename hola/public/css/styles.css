@@ -1,0 +1,87 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.navbar .nav-link img {
+    width: 30px;  /* Ajusta el tamaño del icono */
+    height: 30px;
+    margin-right: 10px;
+}
+
+
+.hero {
+    background-image: url('../img/hero.jpg');
+    background-size: cover;          /* La imagen se ajusta para cubrir toda la sección */
+    background-position: center;     /* Asegura que el centro de la imagen esté visible */
+    background-repeat: no-repeat;    /* Evita que la imagen se repita */
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);  /* Capa oscura para mejorar legibilidad */
+    z-index: -1;
+}
+
+
+h1, h2 {
+    font-weight: 700;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+.beneficios {
+    background-color: #f8f9fa;
+}
+
+.beneficios h5 {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.beneficios i {
+    color: #333;
+}
+
+.beneficios p {
+    font-size: 14px;
+    color: #6c757d;
+}

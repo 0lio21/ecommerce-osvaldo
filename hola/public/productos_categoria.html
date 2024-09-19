@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TiendaPro - Categoría</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar con Categorías y Barra de Búsqueda -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container d-flex justify-content-between">
+            <!-- Botón de Menú de Categorías -->
+            <div>
+                <button class="btn" id="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars fa-2x"></i> <!-- Icono de tres barras -->
+                </button>
+            </div>
+            <!-- Nombre de la tienda centrado -->
+            <div class="mx-auto text-center">
+                <a class="navbar-brand" href="index.html">TiendaPro</a>
+            </div>
+            <!-- Barra de Búsqueda -->
+            <div>
+                <input type="text" id="search-bar" class="form-control" placeholder="Buscar productos..." onkeyup="buscarProductos()">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menú lateral oculto (Categorías) -->
+    <div id="side-menu" style="display: none; position: fixed; top: 0; left: 0; width: 250px; height: 100%; background-color: #f8f9fa; z-index: 1000; box-shadow: 2px 0px 5px rgba(0,0,0,0.5);">
+        <button class="btn btn-light" style="float:right;" onclick="toggleMenu()">X</button>
+        <h5 class="text-center mt-4">Categorías</h5>
+        <ul id="category-list" class="list-group mt-4">
+            <!-- Aquí se cargarán las categorías dinámicamente -->
+        </ul>
+    </div>
+
+    <!-- Título de la categoría -->
+    <div class="container">
+        <h1 class="text-center my-5" id="categoria-titulo"></h1>
+        <div class="row" id="productos-container"></div>
+    </div>
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <!-- Menú de enlaces horizontales -->
+            <div class="row text-center mb-3">
+                <div class="col-12">
+                    <a href="#" class="text-white mx-2">HOT SALE</a>
+                    <a href="#" class="text-white mx-2">CYBER MONDAY</a>
+                    <a href="#" class="text-white mx-2">PROMOCIONES</a>
+                    <a href="#" class="text-white mx-2">AYUDA</a>
+                    <a href="#" class="text-white mx-2">LOCALES</a>
+                    <a href="#" class="text-white mx-2">CONTACTO</a>
+                    <a href="#" class="text-white mx-2">ARREPENTIMIENTO DE COMPRA</a>
+                    <a href="#" class="text-white mx-2">TÉRMINOS Y CONDICIONES</a>
+                    <a href="#" class="text-white mx-2">POLÍTICA DE PRIVACIDAD</a>
+                    <a href="#" class="text-white mx-2">MAYORISTAS</a>
+                </div>
+            </div>
+    
+            <!-- Redes sociales y Contacto -->
+            <div class="row text-center">
+                <div class="col-md-4 mb-3">
+                    <h5>Síguenos</h5>
+                    <a href="https://www.facebook.com" target="_blank" class="text-white mx-2">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" class="text-white mx-2">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" class="text-white mx-2">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                </div>
+    
+                <div class="col-md-4 mb-3">
+                    <h5>Contacto</h5>
+                    <p>Email: <a href="mailto:contacto@tiendapro.com" class="text-white">contacto@tiendapro.com</a></p>
+                    <p>Teléfono: +54 11 1234 5678</p>
+                    <p>Dirección: Av. Ejemplo 123, Buenos Aires</p>
+                </div>
+    
+                <!-- Sección de compra segura -->
+                <div class="col-md-4 mb-3">
+                    <h5>Compra Segura</h5>
+                    <p><i class="fas fa-check-circle"></i> Compra 100% Segura</p>
+                    <p><img src="img/qr_code.png" alt="QR Code" style="width: 60px;"></p>
+                </div>
+            </div>
+    
+            <!-- Derechos reservados -->
+            <div class="text-center mt-4">
+                <p>&copy; 2024 TiendaPro. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    
+        <!-- Botón de WhatsApp flotante -->
+        <a href="https://wa.me/549123456789" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp whatsapp-icon"></i>
+        </a>
+    
+        <!-- Estilos personalizados -->
+        <style>
+            /* Botón flotante de WhatsApp */
+            .whatsapp-float {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: #25d366;
+                color: white;
+                border-radius: 50px;
+                padding: 10px;
+                z-index: 100;
+            }
+    
+            .whatsapp-icon {
+                font-size: 30px;
+            }
+        </style>
+    </footer>
+    
+    <script>
+        let productosData = [];
+
+        // Función para alternar el menú lateral
+        function toggleMenu() {
+            const sideMenu = document.getElementById('side-menu');
+            sideMenu.style.display = sideMenu.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Obtener la categoría desde los parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoria = urlParams.get('categoria');
+        document.getElementById('categoria-titulo').textContent = `Categoría: ${categoria}`;
+
+        // Fetch para obtener los productos desde el archivo JSON
+        fetch('/api/productos')
+            .then(response => response.json())
+            .then(data => {
+                productosData = data; // Guardamos los productos para buscar
+                const productosFiltrados = productosData.filter(producto => producto.categoria === categoria);
+                const productosContainer = document.getElementById('productos-container');
+
+                productosFiltrados.forEach(producto => {
+                    const productoHTML = `
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">${producto.nombre}</h5>
+                                    <p class="card-text">$${producto.precio}</p>
+                                    <button class="btn btn-outline-primary" onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio})">Añadir al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    productosContainer.innerHTML += productoHTML;
+                });
+
+                // Mostrar las categorías en el menú lateral
+                mostrarCategorias(productosData);
+            })
+            .catch(error => console.error('Error al cargar productos:', error));
+
+        // Función para mostrar las categorías en el menú lateral
+        function mostrarCategorias(productos) {
+            const categoriesSet = new Set(productos.map(producto => producto.categoria));
+            const categoryList = document.getElementById('category-list');
+            categoriesSet.forEach(categoria => {
+                const categoriaHTML = `<li class="list-group-item"><a href="productos_categoria.html?categoria=${encodeURIComponent(categoria)}">${categoria}</a></li>`;
+                categoryList.innerHTML += categoriaHTML;
+            });
+        }
+
+        // Función de búsqueda de productos
+        function buscarProductos() {
+            const searchTerm = document.getElementById('search-bar').value.toLowerCase();
+            const productosFiltrados = productosData.filter(producto =>
+                producto.nombre.toLowerCase().includes(searchTerm) && producto.categoria === categoria
+            );
+            mostrarProductos(productosFiltrados); // Mostrar solo los productos filtrados
+        }
+
+        // Función para mostrar productos filtrados
+        function mostrarProductos(productos) {
+            const productosContainer = document.getElementById('productos-container');
+            productosContainer.innerHTML = ''; // Limpiar antes de mostrar productos filtrados
+            productos.forEach(producto => {
+                const productoHTML = `
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">${producto.nombre}</h5>
+                                <p class="card-text">$${producto.precio}</p>
+                                <button class="btn btn-outline-primary" onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio})">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                productosContainer.innerHTML += productoHTML;
+            });
+        }
+
+        // Función para agregar productos al carrito
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        function agregarAlCarrito(id, nombre, precio) {
+            const productoExistente = carrito.find(producto => producto.id === id);
+            if (productoExistente) {
+                productoExistente.cantidad++;
+            } else {
+                carrito.push({ id, nombre, precio, cantidad: 1 });
+            }
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            alert(`${nombre} añadido al carrito`);
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

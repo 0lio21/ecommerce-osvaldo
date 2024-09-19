@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TiendaPro - Inicio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">TiendaPro</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="categoriasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categorías
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="categoriasDropdown" id="categorias-list">
+                            <!-- Aquí se cargarán las categorías dinámicamente -->
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="carrito-btn">
+                            <img src="img/carrito.png" alt="Carrito" style="width: 30px; height: 30px;">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-4">Bienvenido a TiendaPro</h1>
+            <p class="lead">Encuentra los mejores productos con un solo clic</p>
+            <a href="productos.html" class="btn btn-light btn-lg">Explorar Productos</a>
+        </div>
+    </section>
+
+    <!-- Barra de búsqueda -->
+    <section class="py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <input type="text" id="search-bar" class="form-control" placeholder="Buscar productos..." onkeyup="buscarProductos()">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrusel de Productos -->
+    <section class="productos-carousel py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Nuestros Productos</h2>
+            <div id="productosCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" id="carousel-content">
+                    <!-- Aquí se cargarán los productos dinámicamente desde JSON -->
+                </div>
+
+                <!-- Controles del Carrusel -->
+                <a class="carousel-control-prev" href="#productosCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#productosCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrito Card -->
+    <div class="card carrito-card" id="carrito-card" style="display:none; position: fixed; right: 10px; bottom: 10px; width: 300px;">
+        <div class="card-header">
+            <h5>Carrito de Compras</h5>
+            <button type="button" class="close" aria-label="Cerrar" onclick="toggleCarrito()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="card-body">
+            <ul id="carrito-list" class="list-group">
+                <!-- Los productos seleccionados aparecerán aquí -->
+            </ul>
+        </div>
+        <div class="card-footer text-center">
+            <a href="carrito.html" class="btn btn-primary">Ver Detalles del Carrito</a>
+        </div>
+    </div>
+
+    <!-- Beneficios antes del Footer -->
+    <section class="beneficios py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <i class="fas fa-shipping-fast fa-3x mb-3"></i>
+                    <h5>ENVÍO GRATIS A TODO EL PAÍS</h5>
+                    <p class="text-muted">En compras superiores a $79.999</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-store fa-3x mb-3"></i>
+                    <h5>RETIRO EN TIENDA</h5>
+                    <p class="text-muted">Elegí tu tienda más cercana</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-check-circle fa-3x mb-3"></i>
+                    <h5>COMPRA 100% SEGURA</h5>
+                    <p class="text-muted">Tu información protegida y garantizada</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <!-- Menú de enlaces horizontales -->
+            <div class="row text-center mb-3">
+                <div class="col-12">
+                    <a href="#" class="text-white mx-2">HOT SALE</a>
+                    <a href="#" class="text-white mx-2">CYBER MONDAY</a>
+                    <a href="#" class="text-white mx-2">PROMOCIONES</a>
+                    <a href="#" class="text-white mx-2">AYUDA</a>
+                    <a href="#" class="text-white mx-2">LOCALES</a>
+                    <a href="#" class="text-white mx-2">CONTACTO</a>
+                    <a href="#" class="text-white mx-2">ARREPENTIMIENTO DE COMPRA</a>
+                    <a href="#" class="text-white mx-2">TÉRMINOS Y CONDICIONES</a>
+                    <a href="#" class="text-white mx-2">POLÍTICA DE PRIVACIDAD</a>
+                    <a href="#" class="text-white mx-2">MAYORISTAS</a>
+                </div>
+            </div>
+    
+            <!-- Redes sociales y Contacto -->
+            <div class="row text-center">
+                <div class="col-md-4 mb-3">
+                    <h5>Síguenos</h5>
+                    <a href="https://www.facebook.com" target="_blank" class="text-white mx-2">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" class="text-white mx-2">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" class="text-white mx-2">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                </div>
+    
+                <div class="col-md-4 mb-3">
+                    <h5>Contacto</h5>
+                    <p>Email: <a href="mailto:contacto@tiendapro.com" class="text-white">contacto@tiendapro.com</a></p>
+                    <p>Teléfono: +54 11 1234 5678</p>
+                    <p>Dirección: Av. Ejemplo 123, Buenos Aires</p>
+                </div>
+    
+                <!-- Sección de compra segura -->
+                <div class="col-md-4 mb-3">
+                    <h5>Compra Segura</h5>
+                    <p><i class="fas fa-check-circle"></i> Compra 100% Segura</p>
+                    <p><img src="img/qr_code.png" alt="QR Code" style="width: 60px;"></p>
+                </div>
+            </div>
+    
+            <!-- Derechos reservados -->
+            <div class="text-center mt-4">
+                <p>&copy; 2024 TiendaPro. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    
+        <!-- Botón de WhatsApp flotante -->
+        <a href="https://wa.me/549123456789" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp whatsapp-icon"></i>
+        </a>
+    
+        <!-- Estilos personalizados -->
+        <style>
+            /* Botón flotante de WhatsApp */
+            .whatsapp-float {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: #25d366;
+                color: white;
+                border-radius: 50px;
+                padding: 10px;
+                z-index: 100;
+            }
+    
+            .whatsapp-icon {
+                font-size: 30px;
+            }
+        </style>
+    </footer>
+    
+    <!-- Script para cargar los productos y categorías dinámicamente -->
+    <script>
+        let productosData = [];
+
+        // Fetch para obtener los productos desde el archivo JSON
+        fetch('/api/productos')
+            .then(response => response.json())
+            .then(data => {
+                productosData = data; // Guardamos todos los productos en productosData
+                mostrarProductos(productosData);
+                mostrarCategorias(productosData);
+            })
+            .catch(error => console.error('Error al cargar productos:', error));
+
+        // Función para mostrar productos
+        function mostrarProductos(productos) {
+            const carouselContent = document.getElementById('carousel-content');
+            let isFirstSlide = true;
+            let slidesHTML = '';
+            const productosPorSlide = 3;
+
+            // Agrupar productos en grupos de 3 por slide
+            for (let i = 0; i < productos.length; i += productosPorSlide) {
+                const productosGrupo = productos.slice(i, i + productosPorSlide);
+                let slideClass = isFirstSlide ? 'carousel-item active' : 'carousel-item';
+                slidesHTML += `<div class="${slideClass}"><div class="row">`;
+
+                productosGrupo.forEach(producto => {
+                    slidesHTML += `
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">${producto.nombre}</h5>
+                                    <p class="card-text">$${producto.precio}</p>
+                                    <button class="btn btn-outline-primary" onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio})">Añadir al carrito</button>
+                                </div>
+                            </div>
+                        </div>`;
+                });
+
+                slidesHTML += `</div></div>`; 
+                isFirstSlide = false;
+            }
+
+            // Insertar el contenido del carrusel
+            carouselContent.innerHTML = slidesHTML;
+        }
+
+        // Función para mostrar las categorías en el menú
+        function mostrarCategorias(productos) {
+            const categoriesSet = new Set(productos.map(producto => producto.categoria));
+            const categoriasList = document.getElementById('categorias-list');
+            categoriesSet.forEach(categoria => {
+                const categoriaHTML = `<a class="dropdown-item" href="productos_categoria.html?categoria=${encodeURIComponent(categoria)}">${categoria}</a>`;
+                categoriasList.innerHTML += categoriaHTML;
+            });
+        }
+
+        // Función de búsqueda
+        function buscarProductos() {
+            const searchTerm = document.getElementById('search-bar').value.toLowerCase();
+            const productosFiltrados = productosData.filter(producto =>
+                producto.nombre.toLowerCase().includes(searchTerm)
+            );
+            mostrarProductos(productosFiltrados); // Mostrar solo los productos filtrados
+        }
+
+        // Manejo del carrito de compras
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        function agregarAlCarrito(id, nombre, precio) {
+            const index = carrito.findIndex(producto => producto.id === id);
+            if (index !== -1) {
+                carrito[index].cantidad++;
+            } else {
+                carrito.push({ id, nombre, precio, cantidad: 1 });
+            }
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            mostrarCarrito();
+        }
+
+        function eliminarDelCarrito(id) {
+            const index = carrito.findIndex(producto => producto.id === id);
+            if (index !== -1) {
+                carrito[index].cantidad--;
+                if (carrito[index].cantidad <= 0) {
+                    carrito.splice(index, 1); // Elimina el producto si la cantidad es 0
+                }
+            }
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            mostrarCarrito();
+        }
+
+        function mostrarCarrito() {
+            const carritoList = document.getElementById('carrito-list');
+            carritoList.innerHTML = '';
+            carrito.forEach(producto => {
+                carritoList.innerHTML += `
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        ${producto.nombre} - $${producto.precio} x ${producto.cantidad}
+                        <div>
+                            <button class="btn btn-outline-success btn-sm" onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio})">+</button>
+                            <button class="btn btn-outline-danger btn-sm" onclick="eliminarDelCarrito(${producto.id})">-</button>
+                        </div>
+                    </li>`;
+            });
+        }
+
+        function toggleCarrito() {
+            const carritoCard = document.getElementById('carrito-card');
+            carritoCard.style.display = carritoCard.style.display === 'none' ? 'block' : 'none';
+            mostrarCarrito();
+        }
+
+        document.getElementById('carrito-btn').addEventListener('click', toggleCarrito);
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
