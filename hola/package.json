@@ -10,6 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "fs": "^0.0.1-security"
+    "express": "^4.21.0",
+    "fs": "^0.0.1-security",
+    "mercadopago": "^2.0.15"
   }
 }

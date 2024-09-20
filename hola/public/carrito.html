@@ -83,10 +83,13 @@
         }
 
         function finalizarCompra() {
-            alert('¡Gracias por su compra!');
-            localStorage.removeItem('carrito');  // Limpiamos el carrito al finalizar la compra
-            window.location.href = 'index.html';  // Redirigir a la página principal o una página de confirmación
-        }
+    // Guardar el carrito en localStorage si es necesario
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    
+    // Redirigir al formulario de datos personales
+    window.location.href = 'formulario.html';
+}
+
 
         // Mostrar los detalles del carrito al cargar la página
         mostrarCarritoDetalles();
