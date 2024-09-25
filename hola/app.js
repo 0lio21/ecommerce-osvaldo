@@ -6,9 +6,9 @@ const app = express();
 const port = 3005;
 
 // Configurar Mercado Pago
-mercadopago.configure({
-    access_token: ''  // Reemplaza 'YOUR_ACCESS_TOKEN'
-});
+//mercadopago.configure({
+  //  access_token: ''  // Reemplaza 'YOUR_ACCESS_TOKEN'
+//});
 
 app.use(express.static('public'));
 app.use(express.json());
